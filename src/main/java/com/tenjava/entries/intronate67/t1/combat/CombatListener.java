@@ -42,7 +42,17 @@ public class CombatListener implements Listener {
             return;
         }
         if(n == 7){ //Push
-
+            for(Entity entity : e.getPlayer().getWorld().getEntities()){
+                if(entity.getLocation() == e.getPlayer().getEyeLocation()){
+                    if(e.getPlayer().isBlocking()){
+                        if(expCounter == 10){
+                            Player targetPlayer = (Player) entity;
+                            Vector looking = targetPlayer.getLocation().getDirection();
+                            targetPlayer.setVelocity(looking .multiply(-2));
+                        }
+                    }
+                }
+            }
         }
         if(n == 1){ //Drop
 
