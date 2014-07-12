@@ -1,11 +1,11 @@
 package com.tenjava.entries.intronate67.t1;
 
 import com.tenjava.entries.intronate67.t1.combat.JustAnotherListener;
-import com.tenjava.entries.intronate67.t1.economy.EconManager;
-import com.tenjava.entries.intronate67.t1.economy.JoinListener;
+import com.tenjava.entries.intronate67.t1.Economy.EconManager;
+import com.tenjava.entries.intronate67.t1.Economy.JoinListener;
 import com.tenjava.entries.intronate67.t1.combat.CombatListener;
-import com.tenjava.entries.intronate67.t1.economy.util;
-import com.tenjava.entries.intronate67.t1.inventorygui.InventoryListener;
+import com.tenjava.entries.intronate67.t1.Economy.util;
+import com.tenjava.entries.intronate67.t1.InventoryGui.InventoryListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;

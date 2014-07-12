@@ -1,6 +1,6 @@
 package com.tenjava.entries.intronate67.t1;
 
-import com.tenjava.entries.intronate67.t1.economy.EconCommand;
+import com.tenjava.entries.intronate67.t1.Economy.EconCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

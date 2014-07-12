@@ -1,7 +1,7 @@
 package com.tenjava.entries.intronate67.t1.combat;
 
 import com.tenjava.entries.intronate67.t1.TenJava;
-import com.tenjava.entries.intronate67.t1.economy.EconManager;
+import com.tenjava.entries.intronate67.t1.Economy.EconManager;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
