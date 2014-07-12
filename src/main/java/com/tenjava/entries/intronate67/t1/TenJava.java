@@ -30,15 +30,6 @@ public class TenJava extends JavaPlugin {
     public void onEnable(){
 
         instance = this;
-
-        if(!accounts.exists()){
-            try{
-                accounts.createNewFile();
-            }catch(IOException e){
-                e.printStackTrace();
-            }
-        }
-
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new CombatListener(), this);
         pm.registerEvents(new JoinListener(), this);

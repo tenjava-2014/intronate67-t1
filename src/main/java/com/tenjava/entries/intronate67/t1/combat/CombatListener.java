@@ -27,15 +27,27 @@ public class CombatListener implements Listener {
 
     @EventHandler
     public void onPlayerRightClick(PlayerInteractEvent e){
-        Player p = e.getPlayer();
-        if(!p.isBlocking()) return;
-        if(!p.hasPermission("abilities.fireball")) return;
-        Block block = p.getTargetBlock(null, 100);
-        Location loc= block.getLocation();
-        Entity ent = loc.getWorld().spawn(loc, Fireball.class);
-        for(int i = 0; i < 10; i++){
-            p.launchProjectile(Fireball.class).setVelocity(new Vector(loc.getX(), loc.getY(), loc.getZ()));
+        Random rand = new Random();
+        int n = rand.nextInt(8);
+        if(n == 2){ //Launches fire ball
+            Player p = e.getPlayer();
+            if(!p.isBlocking()) return;
+            if(!p.hasPermission("abilities.fireball")) return;
+            Block block = p.getTargetBlock(null, 100);
+            Location loc= block.getLocation();
+            Entity ent = loc.getWorld().spawn(loc, Fireball.class);
+            for(int i = 0; i < 10; i++){
+                p.launchProjectile(Fireball.class).setVelocity(new Vector(loc.getX(), loc.getY(), loc.getZ()));
+            }
+            return;
         }
+        if(n == 7){ //Push
+
+        }
+        if(n == 1){ //Drop
+
+        }
+
     }
 
     @EventHandler
