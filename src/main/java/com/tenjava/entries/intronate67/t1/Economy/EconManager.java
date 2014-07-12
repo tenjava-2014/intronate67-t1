@@ -2,6 +2,7 @@ package com.tenjava.entries.intronate67.t1.Economy;
 
 import com.tenjava.entries.intronate67.t1.TenJava;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,9 +47,9 @@ public class EconManager {
         UUID maxPlayerId = maxEntry.getKey();
         String playerName = Bukkit.getServer().getPlayer(maxPlayerId).getName();
         double maxValue = maxEntry.getValue().doubleValue();
-        //TODO: send message.
+        Player p = Bukkit.getPlayer(maxPlayerId);
+        p.sendMessage("Stuff HERE");
         return;
-
     }
 
 }
