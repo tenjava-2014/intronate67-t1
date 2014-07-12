@@ -26,8 +26,10 @@ public class JustAnotherListener implements Listener{
 
         if(!EconManager.hasAccount(Killed.getUniqueId())) return;
         if(EconManager.hasAccount(Killed.getUniqueId())) return;
+
         double amount = config.getDouble("rewards.pvp");
         EconManager.setBalance(Killer.getUniqueId(), EconManager.getBalance(Killer.getUniqueId()) + amount);
+        EconManager.setBalance(Killed.getUniqueId(), EconManager.getBalance(Killed.getUniqueId()) - amount);
     }
 
 }
