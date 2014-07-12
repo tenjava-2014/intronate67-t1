@@ -27,7 +27,7 @@ public class CombatListener implements Listener {
 
     @EventHandler
     public void onPlayerRightClick(PlayerInteractEvent e){
-        Random rand = new Random();
+        /*Random rand = new Random();
         int n = rand.nextInt(8);
         if(n == 2){ //Launches fire ball
             Player p = e.getPlayer();
@@ -58,7 +58,19 @@ public class CombatListener implements Listener {
         if(n == 1){ //Drop
 
         }
-
+        */
+        for(Entity entity : e.getPlayer().getWorld().getEntities()){
+            if(entity.getLocation() == e.getPlayer().getEyeLocation()){
+                if(e.getPlayer().isBlocking()){
+                    for(int i = 0; i < 10; i++) {
+                        if (expCounter == 10) {
+                            Vector looking = entity.getLocation().getDirection();
+                            entity.setVelocity(looking.multiply(-2));
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @EventHandler
