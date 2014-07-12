@@ -1,3 +1,6 @@
 name: intronate67-t1
 main: com.tenjava.entries.intronate67.t1.TenJava
 version: '${project.version}'
+commands:
+    abil:
+        description: Select your ability.
