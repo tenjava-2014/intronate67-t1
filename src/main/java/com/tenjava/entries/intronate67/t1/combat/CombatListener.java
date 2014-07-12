@@ -1,6 +1,5 @@
 package com.tenjava.entries.intronate67.t1.combat;
 
-import com.tenjava.entries.intronate67.t1.Economy.EconManager;
 import com.tenjava.entries.intronate67.t1.TenJava;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -9,12 +8,10 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
