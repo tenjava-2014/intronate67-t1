@@ -13,7 +13,6 @@ public class EconCommand implements SubCommand{
             p.sendMessage("Nope");
             return true;
         }
-        if(!EconManager.hasAccount(p.getUniqueId())) return true;
         double balance = EconManager.getBalance(p.getUniqueId());
         p.sendMessage("Your balance is " + balance);
         return true;
