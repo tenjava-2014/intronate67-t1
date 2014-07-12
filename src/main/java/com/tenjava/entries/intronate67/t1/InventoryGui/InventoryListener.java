@@ -51,6 +51,7 @@ public class InventoryListener implements Listener{
         fireMeta.setLore(Arrays.asList("Shoot people with fireballs."));
         fireballItem.setItemMeta(fireMeta);
 
+
         ItemStack tnt = new ItemStack(Material.TNT, 1);
         ItemMeta tntMeta = tnt.getItemMeta();
         tntMeta.setDisplayName("Eyes of Explosion");
