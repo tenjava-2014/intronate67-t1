@@ -17,7 +17,7 @@ public class InventoryListener implements Listener{
 
         if(!e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
 
-        if(e.getPlayer().getItemInHand().equals(Material.COMPASS)) return;
+        if(!e.getPlayer().getItemInHand().equals(Material.COMPASS)) return;
 
         Player p = e.getPlayer();
 
