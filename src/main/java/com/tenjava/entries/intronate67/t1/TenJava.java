@@ -4,6 +4,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class TenJava extends JavaPlugin {
 
-    //Test Commit.
+    @Override
+    public void onEnable(){
+
+    }
+    @Override
+    public void onDisable(){
+
+    }
 
 }
