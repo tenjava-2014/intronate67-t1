@@ -1,0 +1,20 @@
+mob-rewards: true
+
+pvp-rewards: true
+
+abilities:
+#Fireball ability can be used by anyone with permission abilities.fireball
+    fireball:
+        cost: 50
+#Op ability can only be used by players who are /op
+    op:
+        cost: null
+#Push ability can be used by anyone with permission abilities.push
+    push:
+        cost: 100
+#Drop ability can be used by anyone with permission abilities.drop
+    drop:
+        cost: 200
+#Whirlwind ability can be used by anyone with permission abilities.whirlwind
+    whirlwind:
+        cost: 500

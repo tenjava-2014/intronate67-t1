@@ -20,15 +20,21 @@ public class TenJava extends JavaPlugin {
 
     @Override
     public void onEnable(){
+
         instance = this;
+
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new CombatListener(), this);
         pm.registerEvents(new JoinListener(), this);
+
         if(!getDataFolder().exists()){
             getDataFolder().mkdir();
         }
+
         getCommand("abil").setExecutor(new CommandHandler(this));
+
         new EconManager(this);
+
         saveConfig();
     }
     @Override

@@ -43,6 +43,7 @@ public class CombatListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEntityEvent e){
         Player p = e.getPlayer();
+
     }
     @EventHandler
     public void onBowUse(ProjectileLaunchEvent e){
