@@ -47,9 +47,8 @@ public class CombatListener implements Listener {
                     if(e.getPlayer().isBlocking()){
                         for(int i = 0; i < 10; i++) {
                             if (expCounter == 10) {
-                                Player targetPlayer = (Player) entity;
-                                Vector looking = targetPlayer.getLocation().getDirection();
-                                targetPlayer.setVelocity(looking.multiply(-2));
+                                Vector looking = entity.getLocation().getDirection();
+                                entity.setVelocity(looking.multiply(-2));
                             }
                         }
                     }
