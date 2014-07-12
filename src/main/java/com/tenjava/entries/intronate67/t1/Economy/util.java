@@ -4,6 +4,7 @@ import com.tenjava.entries.intronate67.t1.TenJava;
 import com.tenjava.entries.intronate67.t1.UUIDGetter;
 import org.bukkit.Bukkit;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
@@ -20,14 +21,18 @@ public class util {
     public static void saveBalances(){
         for(UUID playerId : EconManager.getBalanceMap().keySet()){
             String name = Bukkit.getPlayer(playerId).getName();
-            plugin.getConfig().set("balance." + name, EconManager.getBalanceMap().get(playerId));
+            plugin.accountsConfig.set("balance." + name, EconManager.getBalanceMap().get(playerId));
         }
-        plugin.saveConfig();
+        try{
+            plugin.accountsConfig.save(plugin.accounts);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
     public static void loadBalance(){
         //Load balances.
-        if(!plugin.getConfig().contains("balance")) return;
-        for(String s : plugin.getConfig().getConfigurationSection("balance").getKeys(false)){
+        if(!plugin.accountsConfig.contains("balance")) return;
+        for(String s : plugin.accountsConfig.getConfigurationSection("balance").getKeys(false)){
             Map<String, UUID> response = null;
             try{
                 response = getter.call();
@@ -35,7 +40,7 @@ public class util {
                 e.printStackTrace();
             }
 
-            EconManager.setBalance(response.get(s), plugin.getConfig().getDouble("balance." + s));
+            EconManager.setBalance(response.get(s), plugin.accountsConfig.getDouble("balance." + s));
         }
     }
 
