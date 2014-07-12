@@ -55,11 +55,21 @@ public class TenJava extends JavaPlugin {
         util.loadBalance();
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
+        try {
+            accountsConfig.save(accounts);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         saveConfig();
     }
     @Override
     public void onDisable(){
         util.saveBalances();
+        try {
+            accountsConfig.save(accounts);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

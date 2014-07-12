@@ -28,6 +28,7 @@ public class util {
         }catch(IOException e){
             e.printStackTrace();
         }
+
     }
     public static void loadBalance(){
         //Load balances.
