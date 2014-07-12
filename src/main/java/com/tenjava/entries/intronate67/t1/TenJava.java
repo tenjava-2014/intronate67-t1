@@ -40,6 +40,8 @@ public class TenJava extends JavaPlugin {
 
         new EconManager(this);
         util.loadBalance();
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
         saveConfig();
     }
     @Override
