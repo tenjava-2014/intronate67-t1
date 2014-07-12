@@ -7,8 +7,6 @@ import java.util.UUID;
  */
 public class AbilityUtil {
 
-    public void getAbility(UUID playerId){
-        return;
-    }
+
 
 }
