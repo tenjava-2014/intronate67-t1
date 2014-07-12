@@ -28,10 +28,8 @@ public class CombatListener implements Listener {
     @EventHandler
     public void onPlayerRightClick(PlayerInteractEvent e){
         Player p = e.getPlayer();
-        if(!p.isBlocking()){
-            return;
-        }
-        if(p.hasPermission("abilities.fireball"));
+        if(!p.isBlocking()) return;
+        if(!p.hasPermission("abilities.fireball")) return;
         Block block = p.getTargetBlock(null, 100);
         Location loc= block.getLocation();
         Entity ent = loc.getWorld().spawn(loc, Fireball.class);
