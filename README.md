@@ -35,7 +35,7 @@ Usage
 <!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
 
 What This Plugin (Should do) Does
------------------------------------
+---------------------------------
 
 Abilities is a plugin to add more abiltiies for player combat.
 From using economy to buy abilities or killing mobs to earn money.
