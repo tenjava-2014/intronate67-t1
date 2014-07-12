@@ -9,13 +9,13 @@ import org.bukkit.entity.Player;
 public class EconCommand implements SubCommand{
 
     public boolean onCommand(Player p, String[] args){
-        if(args.length != 1){
+        if(args.length != 0){
             p.sendMessage("Nope");
             return true;
         }
         if(!EconManager.hasAccount(p.getUniqueId())){
             p.sendMessage("You do not have an account!");
-            return true;
+            return false;
         }
         double balance = EconManager.getBalance(p.getUniqueId());
         p.sendMessage("Your balance is " + balance);

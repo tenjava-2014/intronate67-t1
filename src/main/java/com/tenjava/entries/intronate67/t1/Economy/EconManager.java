@@ -24,6 +24,7 @@ public class EconManager {
     public static void setBalance(UUID playerId, double amount){
         plugin.getConfig().set("balances." + Bukkit.getPlayer(playerId).getName(), amount);
         bal.put(playerId, amount);
+        plugin.saveConfig();
     }
     public static double getBalance(UUID playerId){
         return bal.get(playerId);
