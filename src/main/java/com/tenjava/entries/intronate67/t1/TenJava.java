@@ -10,7 +10,7 @@ import java.util.logging.Level;
 
 public class TenJava extends JavaPlugin {
 
-    private static TenJava instance;
+    private static TenJava instance = new TenJava();
 
     public static TenJava getInstance(){
         return instance;
@@ -20,6 +20,7 @@ public class TenJava extends JavaPlugin {
 
     @Override
     public void onEnable(){
+        instance = this;
         Bukkit.getPluginManager().registerEvents(new CombatListener(), this);
         if(!getDataFolder().exists()){
             getDataFolder().mkdir();
