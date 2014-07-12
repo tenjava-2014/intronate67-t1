@@ -44,6 +44,7 @@ public class TenJava extends JavaPlugin {
 
         new EconManager(this);
         util.loadBalance();
+        accountsConfig.options().copyDefaults(true);
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
         try {

@@ -22,7 +22,6 @@ public class EconManager {
     public static HashMap<UUID, Double> bal = new HashMap<UUID, Double>();
 
     public static void setBalance(UUID playerId, double amount){
-        plugin.accountsConfig.set("balances." + Bukkit.getPlayer(playerId).getName(), amount);
         bal.put(playerId, amount);
         plugin.saveConfig();
     }

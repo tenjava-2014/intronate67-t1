@@ -1,5 +1,7 @@
 package com.tenjava.entries.intronate67.t1.Economy;
 
+import com.tenjava.entries.intronate67.t1.TenJava;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,6 +19,8 @@ public class JoinListener implements Listener {
             return;
         }
         EconManager.setBalance(p.getUniqueId(), 250);
+        double amount = TenJava.getInstance().accountsConfig.getDouble("start-amount");
+        TenJava.getInstance().accountsConfig.set("balances." + p.getName(), amount);
 
     }
 
