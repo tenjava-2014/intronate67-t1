@@ -17,6 +17,7 @@ public class JoinListener implements Listener {
             return;
         }
         EconManager.setBalance(p.getUniqueId(), 250);
+
     }
 
 }
