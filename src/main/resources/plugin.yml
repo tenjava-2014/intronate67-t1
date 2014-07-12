@@ -4,3 +4,5 @@ version: '${project.version}'
 commands:
     abil:
         description: Select your ability.
+    bal:
+        description: View your balance.
