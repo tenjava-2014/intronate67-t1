@@ -6,6 +6,7 @@ import com.tenjava.entries.intronate67.t1.Economy.JoinListener;
 import com.tenjava.entries.intronate67.t1.combat.CombatListener;
 import com.tenjava.entries.intronate67.t1.Economy.util;
 import com.tenjava.entries.intronate67.t1.InventoryGui.InventoryListener;
+import com.tenjava.entries.intronate67.t1.combat.MobRewards;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -35,6 +36,7 @@ public class TenJava extends JavaPlugin {
         pm.registerEvents(new JoinListener(), this);
         pm.registerEvents(new InventoryListener(), this);
         pm.registerEvents(new JustAnotherListener(), this);
+        pm.registerEvents(new MobRewards(), this);
 
         if(!getDataFolder().exists()){
             getDataFolder().mkdir();

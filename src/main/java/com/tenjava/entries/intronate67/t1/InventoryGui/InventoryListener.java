@@ -24,6 +24,7 @@ public class InventoryListener implements Listener{
         if(!p.hasPermission("abilities.gui")) return;
 
         InventoryHandler.getInstance().createGui(p, 1, "Abilities");
+
     }
 
 
