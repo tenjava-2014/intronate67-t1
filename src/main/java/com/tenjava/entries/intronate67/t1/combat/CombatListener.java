@@ -45,10 +45,12 @@ public class CombatListener implements Listener {
             for(Entity entity : e.getPlayer().getWorld().getEntities()){
                 if(entity.getLocation() == e.getPlayer().getEyeLocation()){
                     if(e.getPlayer().isBlocking()){
-                        if(expCounter == 10){
-                            Player targetPlayer = (Player) entity;
-                            Vector looking = targetPlayer.getLocation().getDirection();
-                            targetPlayer.setVelocity(looking .multiply(-2));
+                        for(int i = 0; i < 10; i++) {
+                            if (expCounter == 10) {
+                                Player targetPlayer = (Player) entity;
+                                Vector looking = targetPlayer.getLocation().getDirection();
+                                targetPlayer.setVelocity(looking.multiply(-2));
+                            }
                         }
                     }
                 }
