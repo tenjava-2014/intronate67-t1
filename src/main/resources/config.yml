@@ -18,3 +18,21 @@ abilities:
 #Whirlwind ability can be used by anyone with permission abilities.whirlwind
     whirlwind:
         cost: 500
+#Rewards are below change values for people to get for killing them.
+rewards:
+    pvp: 50
+    monsters:
+         ZOMBIE: 15
+         SPIDER: 25
+         CREEPER: 40
+         SKELETON: 45
+         ENDERMAN: 60
+         ZOMBIE_PIG: 25
+         ENDER_DRAGON: 100,000
+         WITHER: 1000
+    animals:
+         PIG: 15
+         CHICKEN: 10
+         COW: 20
+         WOLF: 5
+         OCELOT: 25
