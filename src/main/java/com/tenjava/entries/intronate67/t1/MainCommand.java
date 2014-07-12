@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 public class MainCommand implements SubCommand{
 
     public boolean onCommand(Player p, String[] args){
+
         return true;
     }
     public String help(Player p){
