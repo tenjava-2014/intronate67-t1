@@ -29,9 +29,7 @@ public class CombatListener implements Listener {
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEntityEvent e){
-
-
-
+        Player p = e.getPlayer();
     }
     @EventHandler
     public void onBowUse(ProjectileLaunchEvent e){
@@ -45,6 +43,7 @@ public class CombatListener implements Listener {
         if(!(e.getEntity() instanceof Arrow)){
             return;
         }
+        if(!p.hasPermission("abilities.explosivearrow"));
         Arrow arrow = (Arrow) e.getEntity();
         e.setCancelled(true);
         p.launchProjectile(Arrow.class).setVelocity(arrow.getVelocity().multiply(expCounter));
@@ -52,7 +51,6 @@ public class CombatListener implements Listener {
         Random rand = new Random(10);
         int n = rand.nextInt();
         if(n == 10){
-            Entity tnt = loc.getWorld().spawn(loc, TNTPrimed.class);
             return;
         }
         return;
@@ -75,5 +73,4 @@ public class CombatListener implements Listener {
             }
         }, 0L, 20L);
     }
-
 }
