@@ -20,7 +20,6 @@ public class TenJava extends JavaPlugin {
 
     @Override
     public void onEnable(){
-        instance = this;
         Bukkit.getPluginManager().registerEvents(new CombatListener(), this);
         if(!getDataFolder().exists()){
             getDataFolder().mkdir();
