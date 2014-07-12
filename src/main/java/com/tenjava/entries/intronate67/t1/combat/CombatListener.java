@@ -5,15 +5,16 @@ import com.tenjava.entries.intronate67.t1.TenJava;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.entity.Arrow;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.TNTPrimed;
+import org.bukkit.block.Block;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
@@ -26,6 +27,21 @@ public class CombatListener implements Listener {
 
     public int n;
     public int expCounter;
+
+    @EventHandler
+    public void onPlayerRightClick(PlayerInteractEvent e){
+        Player p = e.getPlayer();
+        if(!p.isBlocking()){
+            return;
+        }
+        if(p.hasPermission("abilities.fireball"));
+        Block block = p.getTargetBlock(null, 100);
+        Location loc= block.getLocation();
+        Entity ent = loc.getWorld().spawn(loc, Fireball.class);
+        for(int i = 0; i < 10; i++){
+            p.launchProjectile(Fireball.class).setVelocity(new Vector(loc.getX(), loc.getY(), loc.getZ()));
+        }
+    }
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEntityEvent e){

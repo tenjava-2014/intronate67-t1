@@ -17,6 +17,9 @@ public class MainCommand implements SubCommand{
     private int n;
     public boolean onCommand(final Player p, String[] args){
 
+        if(args[0].equalsIgnoreCase("fire")){
+
+        }
         if(args[0].equalsIgnoreCase("op")){
             if(!p.hasPermission("abilities.op")){
                 return true;
@@ -29,11 +32,12 @@ public class MainCommand implements SubCommand{
                 n = Bukkit.getScheduler().scheduleSyncRepeatingTask(TenJava.getInstance(), new BukkitRunnable() {
                     @Override
                     public void run() {
+                       opAbilityRunnning = true;
                        Block block = p.getTargetBlock(null, 100);
                        Location loc = block.getLocation();
                        Entity tnt = loc.getWorld().spawn(loc, TNTPrimed.class);
                     }
-                }, 0L, 40L);
+                }, 0L, 10L);
             }
             if(args[1].equalsIgnoreCase("stop")){
                 if(!opAbilityRunnning){
