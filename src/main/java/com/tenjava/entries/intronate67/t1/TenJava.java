@@ -4,6 +4,7 @@ import com.tenjava.entries.intronate67.t1.combat.JustAnotherListener;
 import com.tenjava.entries.intronate67.t1.economy.EconManager;
 import com.tenjava.entries.intronate67.t1.economy.JoinListener;
 import com.tenjava.entries.intronate67.t1.combat.CombatListener;
+import com.tenjava.entries.intronate67.t1.economy.util;
 import com.tenjava.entries.intronate67.t1.inventorygui.InventoryListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -38,12 +39,12 @@ public class TenJava extends JavaPlugin {
         getCommand("abil").setExecutor(new CommandHandler(this));
 
         new EconManager(this);
-
+        util.loadBalance();
         saveConfig();
     }
     @Override
     public void onDisable(){
-
+        util.saveBalances();
     }
 
 }
