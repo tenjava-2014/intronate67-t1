@@ -34,7 +34,7 @@ public class TenJava extends JavaPlugin {
         if(!getDataFolder().exists()){
             getDataFolder().mkdir();
         }
-
+        getCommand("bal").setExecutor(new CommandHandler(this));
         getCommand("abil").setExecutor(new CommandHandler(this));
 
         new EconManager(this);

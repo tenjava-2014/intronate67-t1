@@ -1,5 +1,6 @@
 package com.tenjava.entries.intronate67.t1;
 
+import com.tenjava.entries.intronate67.t1.economy.EconCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,6 +26,7 @@ public class CommandHandler implements CommandExecutor{
     }
     private void loadCommands(){
         commands.put("abil", new MainCommand());
+        commands.put("bal", new EconCommand());
     }
     private void loadHelpInfo(){
         helpinfo.put("abil", 1);
