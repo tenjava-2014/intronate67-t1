@@ -1,11 +1,13 @@
 package com.tenjava.entries.intronate67.t1.InventoryGui;
 
+import com.tenjava.entries.intronate67.t1.TenJava;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 /**
  * Created by Server on 7/12/2014.
@@ -23,6 +25,7 @@ public class InventoryListener implements Listener{
 
         if(!p.hasPermission("abilities.gui")) return;
 
+        InventoryHandler.getInstance().createGui(p, 1, "Abilities");
     }
 
 
