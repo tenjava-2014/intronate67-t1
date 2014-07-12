@@ -27,9 +27,9 @@ public class CombatListener implements Listener {
 
     @EventHandler
     public void onPlayerRightClick(PlayerInteractEvent e){
-        /*Random rand = new Random();
-        int n = rand.nextInt(8);
-        if(n == 2){ //Launches fire ball
+        Random rand = new Random();
+        int n = rand.nextInt(4);
+        if(n == 1){ //Launches fire ball
             Player p = e.getPlayer();
             if(!p.isBlocking()) return;
             if(!p.hasPermission("abilities.fireball")) return;
@@ -41,31 +41,29 @@ public class CombatListener implements Listener {
             }
             return;
         }
-        if(n == 7){ //Push
+        if(n == 2){ //Push
             for(Entity entity : e.getPlayer().getWorld().getEntities()){
                 if(entity.getLocation() == e.getPlayer().getEyeLocation()){
                     if(e.getPlayer().isBlocking()){
                         for(int i = 0; i < 10; i++) {
                             if (expCounter == 10) {
                                 Vector looking = entity.getLocation().getDirection();
-                                entity.setVelocity(looking.multiply(-2));
+                                entity.setVelocity(new Vector(0, 1, 10));
                             }
                         }
                     }
                 }
             }
         }
-        if(n == 1){ //Drop
-
-        }
-        */
-        for(Entity entity : e.getPlayer().getWorld().getEntities()){
-            if(entity.getLocation() == e.getPlayer().getEyeLocation()){
-                if(e.getPlayer().isBlocking()){
-                    for(int i = 0; i < 10; i++) {
-                        if (expCounter == 10) {
-                            Vector looking = entity.getLocation().getDirection();
-                            entity.setVelocity(looking.multiply(-2));
+        if(n == 3){ //Drop
+            for(Entity entity : e.getPlayer().getWorld().getEntities()){
+                if(entity.getLocation() == e.getPlayer().getEyeLocation()){
+                    if(e.getPlayer().isBlocking()){
+                        for(int i = 0; i < 10; i++) {
+                            if (expCounter == 10) {
+                                Location loc = entity.getLocation();
+                                entity.setVelocity(new Vector(0, 20, 0));
+                            }
                         }
                     }
                 }
